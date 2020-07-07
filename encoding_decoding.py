@@ -2,7 +2,7 @@ import jwt
 from datetime import datetime
 def jwt_token(nonce):
     private_key = open('jwtRS256.key').read()
-    payload = {'sub': 'ue839','email':'jwttest@freshworks.com','iat': datetime.utcnow(),'nonce': nonce,'first_name': 'Test','given_name':'JWT'}
+    payload = {'sub': 'ue839','email':'jwttest@freshworks.com','iat': datetime.utcnow(),'nonce': nonce,'first_name': 'Test','given_name':'JWT', 'company':'testcompany123'}
     headers = { "alg": "RS256", "typ": "JWT"}
     token = jwt.encode(payload,private_key,algorithm='RS256',headers=headers).decode('utf=-8')
     #print(token)
